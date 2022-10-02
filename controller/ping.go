@@ -14,7 +14,13 @@ func PingGet(c *gin.Context) {
 
 func PingPost(c *gin.Context) {
 	req := model.Ping{}
-	c.BindJSON(&req)
+
+	err := c.BindJSON(&req)
+	if err != nil {
+		c.JSON(400, err)
+		return
+	}
+
 	res := model.Ping{
 		Message: req.Message,
 	}
