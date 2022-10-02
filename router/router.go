@@ -11,6 +11,6 @@ func Route() *gin.Engine {
 
 	r.Use(cors.Default())
 
-	r.GET("/ping", controller.Ping)
+	r.GET("/ping", controller.PingGet)
 	return r
 }

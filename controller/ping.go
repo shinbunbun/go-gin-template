@@ -5,7 +5,7 @@ import (
 	"github.com/shinbunbun/go-gin-template/model"
 )
 
-func Ping(c *gin.Context) {
+func PingGet(c *gin.Context) {
 	res := model.Ping{
 		Message: "pong",
 	}
