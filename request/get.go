@@ -1,7 +1,7 @@
 package request
 
 import (
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
@@ -12,7 +12,7 @@ func Get(url string) ([]byte, int, error) {
 	}
 	defer resp.Body.Close()
 
-	byteArray, err := ioutil.ReadAll(resp.Body)
+	byteArray, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return nil, 500, err
 	}
