@@ -11,3 +11,12 @@ func PingGet(c *gin.Context) {
 	}
 	c.JSON(200, res)
 }
+
+func PingPost(c *gin.Context) {
+	req := model.Ping{}
+	c.BindJSON(&req)
+	res := model.Ping{
+		Message: req.Message,
+	}
+	c.JSON(200, res)
+}
